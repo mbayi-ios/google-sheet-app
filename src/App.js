@@ -1,25 +1,80 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { Component } from 'react';
+import './App.css';
+import { Button, Container, Form, Header } from 'semantic-ui-react';
+import axios from 'axios';
+import SheetData from './SheetData';
+
+export default class App extends Component  {
+    constructor (props) {
+        super(props)
+
+        this.state = {
+          name: '',
+          phone: '',
+          session: 'Wedneday',
+          date: ''
+        }
+      }
+
+   changeHangler = (e) => {
+    this.setState({[e.target.name] : e.target.value })
+  }
+
+   submitHandler = (e) => {
+    e.preventDefault();
+    console.log(this.state)
+
+    axios.post('https://sheet.best/api/sheets/86247ce9-875e-4bd8-bab6-f53ff5ff4bbf', this.state)
+    .then(response => {
+      console.log(response)
+    })
+
+    this.setState  ({
+      name: '',
+      phone: '',
+      session: '',
+      date: ''
+    })
+
+  }
+ render() {
+  const { name, phone, session, date} = this.state; 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid className="container">
+        <Header as='h2'>Children's Ministry</Header>
+        <Form className='form' onSubmit={this.submitHandler}>
+            <Form.Field>
+              <label >Name</label>
+              <input placeholder='Enter your name' type='text' name= "name" value = {name} onChange= {this.changeHangler} required />
+            </Form.Field>
+
+            <Form.Field>
+              <label>Phone</label>
+              <input placeholder='Enter your Phone' type='tel' name="phone" value = {phone} onChange={this.changeHangler} required />
+            </Form.Field>
+              <label>Pick a Session</label>
+              <select name="session" value={session} onChange={this.changeHangler}>
+                <option value="">Please choose a session</option>
+                  <option value="wednesday">Wednesday Mid Week</option>
+                  <option value="sabbath">Sabbath Children's Sermon</option>
+              </select>
+            <Form.Field>
+
+            </Form.Field>
+
+            <Form.Field>
+              <label > Date</label>
+              <input placeholder='Enter your salary' type='date'  min="2023-09-01" max="2023-09-30" name="date" value = {date} onChange={this.changeHangler} required />
+            </Form.Field>
+
+
+            <Button color='blue' type='submit'>Submit</Button>
+        </Form>
+
+        <SheetData />
+    </Container>
   );
 }
-
-export default App;
+}
