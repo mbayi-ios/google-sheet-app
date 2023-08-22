@@ -23,8 +23,8 @@ const SheetData = () => {
   }, []);
 
   return (
-    <div className="tableView">
-      <table >
+    <div className="tableView" style={{overflowX: 'auto'}}>
+      <table>
         <thead>
           <tr>
             <th>No</th>
@@ -37,16 +37,15 @@ const SheetData = () => {
         <tbody>
           {data?.map((item, i) => (
             <tr key={i}>
-                <td data-label="No">{i + 1}</td>
+              <td data-label="No">{i + 1}</td>
               <td data-label="Name">{item.name}</td>
               <td data-label="Age"> {item.phone}</td>
-              <td data-label= "Session">{item.session}</td>
+              <td data-label="Session">{item.session}</td>
               <td data-label="Job">{item.date}</td>
             </tr>
           ))}
         </tbody>
-      </table> 
-
+      </table>
     </div>
   );
 };

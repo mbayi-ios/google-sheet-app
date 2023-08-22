@@ -8,9 +8,9 @@
 }
 
 .tableView {
-  width: 700px;
   padding-top: 50px;
 }
+
  td, th {
   text-align: left;
   padding: 8px;
