@@ -29,6 +29,7 @@ const SheetData = () => {
           <tr>
             <th>No</th>
             <th>Name</th>
+            <th>Parent</th>
             <th>Phone</th>
             <th>Session</th>
             <th>Date</th>
@@ -39,6 +40,7 @@ const SheetData = () => {
             <tr key={i}>
               <td data-label="No">{i + 1}</td>
               <td data-label="Name">{item.name}</td>
+              <td data-label="Parent">{item.parent}</td>
               <td data-label="Age"> {item.phone}</td>
               <td data-label="Session">{item.session}</td>
               <td data-label="Job">{item.date}</td>

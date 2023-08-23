@@ -11,6 +11,7 @@ export default class App extends Component  {
 
         this.state = {
           name: '',
+          parent: '',
           phone: '',
           session: 'Wedneday',
           date: ''
@@ -32,6 +33,7 @@ export default class App extends Component  {
 
     this.setState  ({
       name: '',
+      parent: '',
       phone: '',
       session: '',
       date: ''
@@ -39,7 +41,7 @@ export default class App extends Component  {
 
   }
  render() {
-  const { name, phone, session, date} = this.state; 
+  const { name, parent, phone, session, date} = this.state; 
 
   return (
     <Container fluid className="container">
@@ -47,7 +49,12 @@ export default class App extends Component  {
         <Form className='form' onSubmit={this.submitHandler}>
             <Form.Field>
               <label >Name</label>
-              <input placeholder='Enter your name' type='text' name= "name" value = {name} onChange= {this.changeHangler} required />
+              <input placeholder='Your name' type='text' name= "name" value = {name} onChange= {this.changeHangler} required />
+            </Form.Field>
+
+            <Form.Field>
+              <label >Parent's Name</label>
+              <input placeholder='Parent name' type='text' name= "parent" value = {parent} onChange= {this.changeHangler} required />
             </Form.Field>
 
             <Form.Field>
