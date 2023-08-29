@@ -29,7 +29,7 @@ const SheetData = () => {
           <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Parent</th>
+            <th>Parent's Name</th>
             <th>Phone</th>
             <th>Session</th>
             <th>Date</th>

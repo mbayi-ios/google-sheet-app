@@ -45,7 +45,9 @@ export default class App extends Component  {
 
   return (
     <Container fluid className="container">
-        <Header as='h2'>Children's Ministry</Header>
+        <Header as='h2'>Karengata Children's Ministries</Header>
+        <p>This is to invite all Children / Teens to take part in Wedneday Prayer Session and Sabbath Children's Sermons.</p>
+       
         <Form className='form' onSubmit={this.submitHandler}>
             <Form.Field>
               <label >Name</label>
@@ -73,7 +75,7 @@ export default class App extends Component  {
 
             <Form.Field>
               <label > Date</label>
-              <input placeholder='Enter your salary' type='date'  min="2023-09-01" max="2023-09-30" name="date" value = {date} onChange={this.changeHangler} required />
+              <input placeholder='Enter your salary' type='date'  min="2023-08-01" max="2023-12-30" name="date" value = {date} onChange={this.changeHangler} required />
             </Form.Field>
 
 
