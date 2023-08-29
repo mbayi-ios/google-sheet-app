@@ -79,7 +79,7 @@ export default class App extends Component  {
             </Form.Field>
 
 
-            <Button color='blue' type='submit'>Submit</Button>
+            <button class="submit" type="submit" >Submit</button>
         </Form>
 
         <SheetData />
