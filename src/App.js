@@ -55,7 +55,7 @@ export default class App extends Component  {
             </Form.Field>
 
             <Form.Field>
-              <label >Parent's Name</label>
+              <label >Parent/Guardian's Name</label>
               <input placeholder='Parent name' type='text' name= "parent" value = {parent} onChange= {this.changeHangler} required />
             </Form.Field>
 
